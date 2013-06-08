@@ -1,10 +1,21 @@
 set nocompatible
 
-inoremap jj <esc>
+" make status line always visible
+set laststatus=2
+let g:PowerLine_symbols = 'fancy'
 
+
+inoremap jj <esc>
+let g:Powerline_symbols = 'fancy'
 runtime bundle/pathogen.vim
 silent! call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
+
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 filetype plugin indent on
 syntax on
@@ -178,11 +189,13 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 " GUI Settings {
     " GVIM- (here instead of .gvimrc)
     if has('gui_running')
-        colorscheme Frontier
+        set background=dark
+        syntax enable
+        colorscheme solarized
+
         set guioptions-=T           " remove the toolbar
         set lines=40                " 40 lines of text instead of 24,
-        set transparency=5          " Make the window slightly transparent
-        set guifont=Monaco:h12
+        set guifont=Inconsolata-dz\ for\ Powerline:h13
     else
         set term=builtin_ansi       " Make arrow and other keys work
     endif
