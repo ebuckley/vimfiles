@@ -79,3 +79,19 @@ snippet as
 
 snippet p
 	System.out.println(${1: message});
+
+snippet io 
+	try {
+			BufferedReader ${1:reader} = new BufferedReader(new FileReader("${2:foo.txt}"));
+			try {
+				String line = null;
+				while ((line = ${3:reader}.readLine()) != null) {
+					System.out.println(line);
+				}
+			} finally {
+				${4:reader}.close();
+			}
+		} catch (IOException ioe) {
+			System.err.println("oops " + ioe.getMessage());
+		}
+
