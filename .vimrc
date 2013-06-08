@@ -197,6 +197,10 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
         set lines=40                " 40 lines of text instead of 24,
         set guifont=Inconsolata-dz\ for\ Powerline:h13
     else
+        " not gui
+        set background=dark
+        syntax enable
+        colorscheme solarized
         set term=builtin_ansi       " Make arrow and other keys work
     endif
 " }
