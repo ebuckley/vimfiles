@@ -191,11 +191,11 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
     if has('gui_running')
         set background=dark
         syntax enable
-        colorscheme solarized
+        colorscheme mellow
 
         set guioptions-=T           " remove the toolbar
         set lines=40                " 40 lines of text instead of 24,
-        set guifont=Inconsolata-dz\ for\ Powerline:h13
+        set guifont=Lucida\ Console:h11
     else
         " not gui
         set background=dark
